@@ -1,37 +1,8 @@
 const cover = document.getElementById('cover');
 const invite = document.getElementById('invitation');
 const openBtn = document.getElementById('openInvite');
+const music = document.getElementById('bgMusic');
 const musicToggle = document.getElementById('musicToggle');
-let ytPlayer;
-let playerReady = false;
-let isPlaying = false;
-
-window.onYouTubeIframeAPIReady = function () {
-  ytPlayer = new YT.Player('youtubePlayer', {
-    height: '1',
-    width: '1',
-    videoId: '0gmK98Rs9YM',
-    playerVars: {
-      autoplay: 0,
-      controls: 0,
-      disablekb: 1,
-      fs: 0,
-      modestbranding: 1,
-      playsinline: 1,
-      rel: 0,
-      loop: 1,
-      playlist: '0gmK98Rs9YM'
-    },
-    events: {
-      onReady: () => { playerReady = true; },
-      onStateChange: (event) => {
-        isPlaying = event.data === YT.PlayerState.PLAYING;
-        musicToggle.classList.toggle('playing', isPlaying);
-        musicToggle.textContent = isPlaying ? '❚❚' : '♫';
-      }
-    }
-  });
-};
 
 openBtn.addEventListener('click', () => {
   cover.style.transition = 'opacity .7s ease';
@@ -40,17 +11,19 @@ openBtn.addEventListener('click', () => {
     cover.style.display = 'none';
     invite.classList.remove('hidden');
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    if (playerReady) ytPlayer.playVideo();
+    music.play().then(() => musicToggle.classList.add('playing')).catch(() => {});
   }, 700);
 });
 
-musicToggle.addEventListener('click', () => {
-  if (!playerReady) return;
-  if (isPlaying) ytPlayer.pauseVideo();
-  else ytPlayer.playVideo();
+musicToggle.addEventListener('click', async () => {
+  if (music.paused) {
+    try { await music.play(); musicToggle.classList.add('playing'); } catch(e) {}
+  } else {
+    music.pause(); musicToggle.classList.remove('playing');
+  }
 });
 
-const weddingDate = new Date('2027-06-21T14:30:00+08:00');
+const weddingDate = new Date('2025-06-21T14:30:00');
 function updateCountdown(){
   const now = new Date();
   let diff = weddingDate - now;
@@ -71,10 +44,17 @@ document.getElementById('giftBtn').addEventListener('click', () => {
   document.getElementById('giftDetails').classList.toggle('hidden-panel');
 });
 
+document.getElementById('rsvpForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const data = new FormData(e.target);
+  document.getElementById('rsvpMessage').textContent = `Thank you, ${data.get('name')}! Your RSVP has been recorded in this demo.`;
+  e.target.reset();
+});
+
 const calendarLink = document.getElementById('calendarLink');
 const title = encodeURIComponent('Alexander & Beatrice Wedding');
 const details = encodeURIComponent('Wedding ceremony and reception');
 const location = encodeURIComponent('La Bellezza Garden, Tagaytay City, Philippines');
-calendarLink.href = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=20270621T063000Z/20270621T143000Z&details=${details}&location=${location}`;
+calendarLink.href = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=20250621T063000Z/20250621T143000Z&details=${details}&location=${location}`;
 calendarLink.target = '_blank';
 calendarLink.rel = 'noopener';
