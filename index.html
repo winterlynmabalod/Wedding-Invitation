@@ -2,117 +2,299 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#082b63" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#062a63" />
+  <meta name="description" content="Royal Blue Hydrangea Wedding Invitation" />
   <title>Alexander & Beatrice | Wedding Invitation</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="cover" class="cover">
-    <div class="stars"></div>
-    <div class="hydrangea cluster cluster-a"></div>
-    <div class="hydrangea cluster cluster-b"></div>
-    <p class="eyebrow light">YOU ARE INVITED</p>
-    <button id="openInvite" class="seal" aria-label="Open invitation">
-      <span>A</span><i></i><span>B</span>
-    </button>
-    <p class="tap">Tap to open</p>
-    <span class="chevron">⌄</span>
-  </div>
+  <!-- Reusable floral SVG artwork. No image folder needed. -->
+  <svg class="svg-defs" aria-hidden="true" focusable="false">
+    <defs>
+      <radialGradient id="petalBlue" cx="35%" cy="30%" r="75%">
+        <stop offset="0%" stop-color="#d9edff" />
+        <stop offset="42%" stop-color="#8cb9ef" />
+        <stop offset="100%" stop-color="#2f69b3" />
+      </radialGradient>
+      <radialGradient id="petalLight" cx="35%" cy="30%" r="75%">
+        <stop offset="0%" stop-color="#ffffff" />
+        <stop offset="50%" stop-color="#cfe4fb" />
+        <stop offset="100%" stop-color="#6c9dd6" />
+      </radialGradient>
+      <linearGradient id="leafGreen" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#7f9b88" />
+        <stop offset="45%" stop-color="#486e5b" />
+        <stop offset="100%" stop-color="#203f35" />
+      </linearGradient>
+      <linearGradient id="goldStroke" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#f3db9b" />
+        <stop offset="50%" stop-color="#caa65a" />
+        <stop offset="100%" stop-color="#9a7839" />
+      </linearGradient>
 
-  <main id="invitation" class="invite hidden">
-    <section class="section hero paper">
-      <div class="floral floral-top-right"></div>
-      <div class="floral floral-bottom-left"></div>
-      <p class="eyebrow">TOGETHER WITH THEIR FAMILIES</p>
-      <h1><span>ALEXANDER</span><em>Reyes</em><b>&</b><span>BEATRICE</span><em>Lorenzo</em></h1>
+      <symbol id="leaf" viewBox="0 0 100 55">
+        <path d="M6 48C28 6 66 2 94 8 78 37 48 58 6 48Z" fill="url(#leafGreen)" />
+        <path d="M13 45C39 37 62 25 87 12" fill="none" stroke="#b1c3b6" stroke-width="2" opacity=".55" />
+      </symbol>
+
+      <symbol id="hydrangea" viewBox="0 0 180 180">
+        <g filter="url(#none)">
+          <circle cx="88" cy="88" r="64" fill="#4d7fb9" opacity=".20" />
+          <g fill="url(#petalBlue)" stroke="#f4f8ff" stroke-opacity=".4" stroke-width="1.3">
+            <circle cx="54" cy="42" r="25"/><circle cx="84" cy="34" r="24"/><circle cx="116" cy="43" r="25"/>
+            <circle cx="137" cy="67" r="24"/><circle cx="142" cy="99" r="25"/><circle cx="127" cy="126" r="24"/>
+            <circle cx="99" cy="142" r="25"/><circle cx="67" cy="139" r="23"/><circle cx="42" cy="119" r="24"/>
+            <circle cx="34" cy="88" r="24"/><circle cx="40" cy="62" r="23"/>
+            <circle cx="67" cy="68" r="23"/><circle cx="96" cy="64" r="24"/><circle cx="119" cy="83" r="24"/>
+            <circle cx="113" cy="111" r="23"/><circle cx="83" cy="119" r="24"/><circle cx="59" cy="101" r="23"/>
+            <circle cx="84" cy="90" r="25"/>
+          </g>
+          <g fill="#f3d38b" opacity=".85">
+            <circle cx="54" cy="42" r="3"/><circle cx="84" cy="34" r="3"/><circle cx="116" cy="43" r="3"/>
+            <circle cx="137" cy="67" r="3"/><circle cx="142" cy="99" r="3"/><circle cx="127" cy="126" r="3"/>
+            <circle cx="99" cy="142" r="3"/><circle cx="67" cy="139" r="3"/><circle cx="42" cy="119" r="3"/>
+            <circle cx="34" cy="88" r="3"/><circle cx="40" cy="62" r="3"/><circle cx="84" cy="90" r="3"/>
+          </g>
+        </g>
+      </symbol>
+
+      <symbol id="hydrangea-light" viewBox="0 0 180 180">
+        <g fill="url(#petalLight)" stroke="#ffffff" stroke-opacity=".55" stroke-width="1.2">
+          <circle cx="56" cy="43" r="25"/><circle cx="87" cy="36" r="24"/><circle cx="117" cy="46" r="24"/>
+          <circle cx="139" cy="72" r="24"/><circle cx="141" cy="103" r="23"/><circle cx="124" cy="128" r="24"/>
+          <circle cx="96" cy="141" r="24"/><circle cx="65" cy="137" r="23"/><circle cx="42" cy="117" r="23"/>
+          <circle cx="36" cy="88" r="23"/><circle cx="43" cy="62" r="23"/><circle cx="69" cy="69" r="23"/>
+          <circle cx="98" cy="65" r="24"/><circle cx="119" cy="86" r="23"/><circle cx="111" cy="113" r="23"/>
+          <circle cx="82" cy="119" r="23"/><circle cx="59" cy="99" r="23"/><circle cx="85" cy="91" r="24"/>
+        </g>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- Cover: anchor fallback makes it open even if JavaScript fails. -->
+  <section class="cover" id="cover" aria-label="Wedding invitation cover">
+    <div class="cover-glow glow-one"></div>
+    <div class="cover-glow glow-two"></div>
+    <div class="stars" aria-hidden="true"></div>
+
+    <svg class="flower-cluster cover-flower top-left" viewBox="0 0 360 360" aria-hidden="true">
+      <use href="#leaf" x="18" y="160" width="145" height="85" transform="rotate(-35 90 200)" />
+      <use href="#leaf" x="100" y="40" width="140" height="82" transform="rotate(55 170 80)" />
+      <use href="#leaf" x="210" y="125" width="135" height="78" transform="rotate(110 275 165)" />
+      <use href="#hydrangea-light" x="-30" y="-35" width="215" height="215" />
+      <use href="#hydrangea" x="105" y="55" width="185" height="185" />
+      <use href="#hydrangea-light" x="-5" y="135" width="160" height="160" />
+    </svg>
+
+    <svg class="flower-cluster cover-flower bottom-right" viewBox="0 0 380 380" aria-hidden="true">
+      <use href="#leaf" x="20" y="120" width="150" height="90" transform="rotate(135 95 165)" />
+      <use href="#leaf" x="150" y="210" width="150" height="86" transform="rotate(-60 225 250)" />
+      <use href="#leaf" x="220" y="65" width="135" height="80" transform="rotate(20 285 105)" />
+      <use href="#hydrangea" x="150" y="150" width="215" height="215" />
+      <use href="#hydrangea-light" x="38" y="210" width="170" height="170" />
+      <use href="#hydrangea" x="210" y="48" width="155" height="155" />
+    </svg>
+
+    <a class="open-invite" id="openInvite" href="#invitation" aria-label="Open wedding invitation">
+      <p class="eyebrow">YOU ARE CORDIALLY INVITED</p>
+      <div class="seal" aria-hidden="true">
+        <div class="seal-ring seal-ring-one"></div>
+        <div class="seal-ring seal-ring-two"></div>
+        <span class="seal-letter">A</span>
+        <i></i>
+        <span class="seal-letter">B</span>
+      </div>
+      <p class="open-text">Tap to open</p>
+      <span class="chevron" aria-hidden="true"></span>
+    </a>
+  </section>
+
+  <main id="invitation">
+    <!-- Hero invitation -->
+    <section class="paper-section hero-section reveal">
+      <div class="ornament-line"><span></span><b>✦</b><span></span></div>
+      <p class="small-caps">TOGETHER WITH THEIR FAMILIES</p>
+      <h1 class="couple-names">
+        <span>Alexander</span>
+        <em>Reyes</em>
+        <b>&amp;</b>
+        <span>Beatrice</span>
+        <em>Lorenzo</em>
+      </h1>
       <p class="invite-copy">joyfully invite you to celebrate their wedding</p>
-      <div class="date-row"><small>MONDAY</small><strong>21</strong><small>JUNE<br>2027</small></div>
-      <p class="closing-copy">A day of love, laughter and happily ever after.</p>
+
+      <div class="date-display">
+        <div><small>SATURDAY</small><strong>21</strong></div>
+        <span class="date-divider"></span>
+        <div><small>JUNE</small><strong>2027</strong></div>
+      </div>
+
+      <p class="quote">“A day of love, laughter, and happily ever after.”</p>
+
+      <svg class="side-bloom bloom-left" viewBox="0 0 250 330" aria-hidden="true">
+        <use href="#leaf" x="5" y="60" width="120" height="70" transform="rotate(-40 65 95)" />
+        <use href="#leaf" x="80" y="175" width="120" height="70" transform="rotate(40 140 210)" />
+        <use href="#hydrangea" x="-45" y="120" width="190" height="190" />
+        <use href="#hydrangea-light" x="70" y="8" width="135" height="135" />
+      </svg>
+      <svg class="side-bloom bloom-right" viewBox="0 0 250 330" aria-hidden="true">
+        <use href="#leaf" x="100" y="70" width="120" height="70" transform="rotate(25 160 105)" />
+        <use href="#leaf" x="25" y="200" width="120" height="70" transform="rotate(-25 85 235)" />
+        <use href="#hydrangea-light" x="90" y="120" width="180" height="180" />
+        <use href="#hydrangea" x="18" y="8" width="135" height="135" />
+      </svg>
     </section>
 
-    <section class="section story paper">
-      <h2>Our Story</h2>
-      <p>Two hearts, one love, a beautiful journey, a lifetime to go.</p>
-      <div id="countdown" class="countdown">
-        <div><strong id="days">00</strong><span>Days</span></div>
+    <!-- Countdown -->
+    <section class="blue-section reveal">
+      <p class="script-title light">Until we say “I do”</p>
+      <div class="countdown" id="countdown" data-date="2027-06-21T14:30:00+08:00">
+        <div><strong id="days">000</strong><span>Days</span></div>
         <div><strong id="hours">00</strong><span>Hours</span></div>
         <div><strong id="minutes">00</strong><span>Minutes</span></div>
         <div><strong id="seconds">00</strong><span>Seconds</span></div>
       </div>
-      <div class="couple-art" aria-hidden="true">
-        <div class="person groom">🤵🏻</div><div class="heart">♥</div><div class="person bride">👰🏻‍♀️</div>
-      </div>
     </section>
 
-    <section class="section details paper">
-      <h2>Ceremony & Reception</h2>
-      <div class="detail-grid">
-        <article>
-          <div class="icon">⛪</div>
-          <h3>Ceremony</h3>
-          <strong>2:30 PM</strong>
-          <p>St. Benedict Church<br>123 Faith Street<br>Manila, Philippines</p>
+    <!-- Ceremony & reception -->
+    <section class="paper-section details-section reveal">
+      <p class="script-title">Ceremony &amp; Reception</p>
+      <p class="section-intro">We would be honored to celebrate this beautiful day with you.</p>
+
+      <div class="event-grid">
+        <article class="event-card">
+          <div class="line-icon church-icon" aria-hidden="true">♜</div>
+          <h2>Ceremony</h2>
+          <p class="event-time">2:30 PM</p>
+          <p><strong>St. Benedict Church</strong><br />123 Faith Street<br />Tagaytay City, Philippines</p>
+          <a class="button" href="https://www.google.com/maps/search/?api=1&query=St.+Benedict+Church+Tagaytay" target="_blank" rel="noopener">Open in Maps</a>
         </article>
-        <article>
-          <div class="icon">🏛️</div>
-          <h3>Reception</h3>
-          <strong>5:30 PM</strong>
-          <p>La Bellezza Garden<br>456 Bloom Avenue<br>Tagaytay City</p>
+
+        <article class="event-card">
+          <div class="line-icon" aria-hidden="true">♕</div>
+          <h2>Reception</h2>
+          <p class="event-time">5:30 PM</p>
+          <p><strong>La Belleza Garden</strong><br />456 Bloom Avenue<br />Tagaytay City, Philippines</p>
+          <a class="button" href="https://www.google.com/maps/search/?api=1&query=La+Belleza+Garden+Tagaytay" target="_blank" rel="noopener">Open in Maps</a>
         </article>
       </div>
-      <div class="button-row">
-        <a class="btn" href="https://maps.google.com" target="_blank" rel="noopener">Open in Maps</a>
-        <a class="btn" id="calendarLink" href="#">Add to Calendar</a>
+
+      <a class="button button-outline calendar-button" id="calendarLink" href="#">Add to Calendar</a>
+    </section>
+
+    <!-- Timeline -->
+    <section class="paper-section timeline-section reveal">
+      <p class="script-title">Our Wedding Day</p>
+      <div class="timeline">
+        <div class="timeline-item"><span>2:30</span><i></i><div><b>Ceremony</b><small>Exchange of vows</small></div></div>
+        <div class="timeline-item"><span>4:00</span><i></i><div><b>Photos</b><small>Family &amp; friends</small></div></div>
+        <div class="timeline-item"><span>5:30</span><i></i><div><b>Cocktails</b><small>Welcome drinks</small></div></div>
+        <div class="timeline-item"><span>6:30</span><i></i><div><b>Dinner</b><small>Dinner is served</small></div></div>
+        <div class="timeline-item"><span>8:00</span><i></i><div><b>Dancing</b><small>Celebrate with us</small></div></div>
+        <div class="timeline-item"><span>10:30</span><i></i><div><b>Send-off</b><small>One sweet goodbye</small></div></div>
       </div>
     </section>
 
-    <section class="section timeline paper">
-      <h2>Event Timeline</h2>
-      <div class="timeline-row">
-        <div><span>💍</span><strong>2:30 PM</strong><small>Ceremony</small></div>
-        <div><span>📷</span><strong>4:00 PM</strong><small>Photos</small></div>
-        <div><span>🥂</span><strong>5:30 PM</strong><small>Cocktails</small></div>
-        <div><span>🍽️</span><strong>6:30 PM</strong><small>Dinner</small></div>
-        <div><span>🎵</span><strong>8:00 PM</strong><small>Dancing</small></div>
-        <div><span>✨</span><strong>10:30 PM</strong><small>Send-off</small></div>
+    <!-- Dress code -->
+    <section class="blue-section dress-section reveal">
+      <p class="script-title light">Dress Code</p>
+      <p class="dress-copy">Formal attire in elegant neutrals and soft blues. We kindly ask guests to reserve royal blue for the couple’s motif.</p>
+      <div class="palette" aria-label="Suggested colors">
+        <span style="--swatch:#e9e2d4"></span>
+        <span style="--swatch:#c8b9a3"></span>
+        <span style="--swatch:#aab5bf"></span>
+        <span style="--swatch:#8fa8bd"></span>
+        <span style="--swatch:#38495c"></span>
       </div>
     </section>
 
-    <section class="section venue paper two-col">
-      <div>
-        <h2>Venue</h2>
-        <h3>LA BELLEZZA GARDEN</h3>
+    <!-- Venue -->
+    <section class="paper-section venue-section reveal">
+      <div class="venue-illustration" aria-hidden="true">
+        <div class="venue-moon"></div>
+        <div class="venue-house">
+          <span class="roof"></span><span class="body"></span><span class="door"></span>
+          <i class="window w1"></i><i class="window w2"></i><i class="window w3"></i><i class="window w4"></i>
+        </div>
+        <div class="venue-lights"></div>
+        <svg class="venue-flower" viewBox="0 0 260 200">
+          <use href="#hydrangea" x="-15" y="45" width="130" height="130" />
+          <use href="#hydrangea-light" x="80" y="65" width="120" height="120" />
+          <use href="#leaf" x="145" y="15" width="100" height="58" transform="rotate(15 195 45)" />
+        </svg>
+      </div>
+      <div class="venue-copy">
+        <p class="script-title">The Venue</p>
+        <h2>La Belleza Garden</h2>
         <p>456 Bloom Avenue, Tagaytay City, Philippines</p>
-        <p>A charming garden venue surrounded by nature, perfect for our special day.</p>
-        <a class="btn" href="https://maps.google.com" target="_blank" rel="noopener">Open in Maps</a>
-      </div>
-      <div class="venue-art">
-        <div class="moon"></div>
-        <div class="gazebo">✦</div>
+        <p class="muted">A romantic garden celebration surrounded by candlelight, hydrangeas, and the people we love most.</p>
+        <a class="button" href="https://www.google.com/maps/search/?api=1&query=La+Belleza+Garden+Tagaytay" target="_blank" rel="noopener">Open in Maps</a>
       </div>
     </section>
 
-    <section class="section gifts paper">
-      <h2>Gifts</h2>
-      <p>Your presence is the greatest gift of all. But if you wish to honor us with a gift, a contribution to our future would be warmly appreciated.</p>
-      <button class="btn" id="giftBtn">View Gift Details</button>
-      <div id="giftDetails" class="gift-details hidden-panel">Sample only: GCash / Bank details can be placed here later.</div>
+    <!-- Gifts -->
+    <section class="paper-section gift-section reveal">
+      <p class="script-title">Gifts</p>
+      <div class="gift-icon" aria-hidden="true">✦</div>
+      <p>Your presence is the greatest gift of all. If you wish to honor us with a gift, a contribution to our future together would be warmly appreciated.</p>
     </section>
 
-    <footer class="footer">
-      <div class="mini-seal">A | B</div>
-      <strong>THANK YOU</strong>
-      <p>We look forward to celebrating with you!</p>
-    </footer>
+    <!-- FAQ -->
+    <section class="paper-section faq-section reveal">
+      <p class="script-title">A Few Notes</p>
+      <details>
+        <summary>Can I bring a plus-one?</summary>
+        <p>Please refer to the names indicated on your invitation.</p>
+      </details>
+      <details>
+        <summary>Are children invited?</summary>
+        <p>We adore your little ones, but this sample celebration is planned as an adults-only evening.</p>
+      </details>
+      <details>
+        <summary>How do I get to the venue?</summary>
+        <p>Use the Open in Maps button above for navigation. We recommend allowing extra travel time for weekend traffic.</p>
+      </details>
+      <details>
+        <summary>Where should I stay?</summary>
+        <p>Nearby hotels and guesthouses in Tagaytay are convenient for both the ceremony and reception.</p>
+      </details>
+    </section>
+
+    <!-- Closing -->
+    <section class="closing-section reveal">
+      <svg class="closing-bloom" viewBox="0 0 520 260" aria-hidden="true">
+        <use href="#leaf" x="15" y="90" width="175" height="100" transform="rotate(-25 100 140)" />
+        <use href="#leaf" x="345" y="55" width="165" height="96" transform="rotate(165 425 105)" />
+        <use href="#hydrangea-light" x="-20" y="55" width="190" height="190" />
+        <use href="#hydrangea" x="340" y="70" width="190" height="190" />
+      </svg>
+      <p class="small-caps">WITH LOVE</p>
+      <h2>Alexander <span>&amp;</span> Beatrice</h2>
+      <p>June 21, 2027</p>
+      <div class="monogram">A <i></i> B</div>
+      <p class="thank-you">We cannot wait to celebrate with you.</p>
+    </section>
   </main>
 
-  <button id="musicToggle" class="music" aria-label="Toggle music">♫</button>
-  <div id="youtubePlayer" class="youtube-player" aria-hidden="true"></div>
-  <script src="https://www.youtube.com/iframe_api"></script>
+  <!-- Hidden YouTube player controlled by the music button. -->
+  <iframe
+    id="youtubePlayer"
+    class="youtube-player"
+    src="https://www.youtube.com/embed/0gmK98Rs9YM?enablejsapi=1&playsinline=1&rel=0&loop=1&playlist=0gmK98Rs9YM"
+    title="Wedding background music"
+    allow="autoplay; encrypted-media"
+    referrerpolicy="strict-origin-when-cross-origin"
+  ></iframe>
+
+  <button class="music-button" id="musicButton" type="button" aria-label="Play background music" aria-pressed="false">
+    <span class="music-note">♪</span>
+    <span class="music-rings" aria-hidden="true"></span>
+  </button>
 
   <script src="script.js"></script>
 </body>
