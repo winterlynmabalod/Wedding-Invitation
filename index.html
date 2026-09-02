@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#082b61">
+  <meta name="description" content="Alexander & Beatrice — Wedding Invitation">
+  <title>Alexander & Beatrice | Wedding Invitation</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Italiana&family=Montserrat:wght@400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="youtube-player" aria-hidden="true"></div>
+
+  <button id="musicButton" class="music-button" type="button" aria-label="Play or pause music">
+    <span class="music-note">♪</span>
+  </button>
+
+  <header id="cover" class="cover">
+    <div class="cover-paper">
+      <img class="cover-floral cover-floral-left" src="images/hydrangea-corner.jpg" alt="">
+      <img class="cover-floral cover-floral-right" src="images/hydrangea-corner.jpg" alt="">
+
+      <div class="cover-content">
+        <p class="eyebrow">Together with their families</p>
+
+        <div class="cover-names">
+          <span>Alexander</span>
+          <small>&</small>
+          <span>Beatrice</span>
+        </div>
+
+        <p class="cover-date">21 · JUNE · 2027</p>
+
+        <button id="openInvitation" class="seal-button" type="button" aria-label="Open invitation">
+          <img src="images/wax-seal.jpg" alt="">
+          <span class="seal-initials">A <i>|</i> B</span>
+        </button>
+
+        <p class="tap-copy">Tap the seal to open</p>
+        <span class="down-arrow">⌄</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="invitation" class="invitation" hidden>
+    <section class="paper-section intro-section reveal">
+      <img class="gold-corner top-left" src="images/gold-corner.jpg" alt="">
+
+      <div class="section-inner intro-inner">
+        <p class="eyebrow">With joyful hearts</p>
+        <h1 class="script-title">Alexander <span>&</span> Beatrice</h1>
+        <img class="divider" src="images/floral-divider.jpg" alt="">
+        <p class="formal-copy">
+          Together with their families, joyfully invite you to celebrate
+          their marriage and the beginning of their forever.
+        </p>
+
+        <div class="date-lockup">
+          <span>Monday</span>
+          <strong>21</strong>
+          <span>June · 2027</span>
+        </div>
+
+        <p class="location-line">Tagaytay City, Philippines</p>
+      </div>
+    </section>
+
+    <section class="blue-section countdown-section reveal">
+      <div class="section-inner">
+        <p class="eyebrow light">Until we say “I do”</p>
+        <h2 class="light-title">Counting Down</h2>
+
+        <div class="countdown" aria-label="Wedding countdown">
+          <div><strong id="days">000</strong><span>Days</span></div>
+          <div><strong id="hours">00</strong><span>Hours</span></div>
+          <div><strong id="minutes">00</strong><span>Minutes</span></div>
+          <div><strong id="seconds">00</strong><span>Seconds</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="paper-section event-section reveal">
+      <div class="section-inner">
+        <p class="eyebrow">The celebration</p>
+        <h2>Ceremony & Reception</h2>
+        <img class="divider" src="images/floral-divider.jpg" alt="">
+
+        <div class="event-grid">
+          <article class="event-card">
+            <div class="event-image-wrap watercolor">
+              <img src="images/ceremony-church.jpg" alt="Watercolor wedding chapel">
+            </div>
+            <p class="event-label">Ceremony</p>
+            <h3>St. Benedict Church</h3>
+            <p class="event-time">2:30 PM</p>
+            <p>123 Faith Street<br>Tagaytay City</p>
+            <a class="outline-button" href="https://maps.google.com/" target="_blank" rel="noopener">Open in Maps</a>
+          </article>
+
+          <article class="event-card">
+            <div class="event-image-wrap">
+              <img src="images/reception.jpg" alt="Elegant hydrangea wedding reception">
+            </div>
+            <p class="event-label">Reception</p>
+            <h3>La Bellezza Garden</h3>
+            <p class="event-time">5:30 PM</p>
+            <p>456 Bloom Avenue<br>Tagaytay City</p>
+            <button id="calendarButton" class="outline-button" type="button">Add to Calendar</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="paper-section timeline-section reveal">
+      <div class="section-inner">
+        <p class="eyebrow">Our wedding day</p>
+        <h2>Order of Events</h2>
+        <img class="divider compact-divider" src="images/floral-divider.jpg" alt="">
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-icon"><img src="images/timeline-rings.png" alt=""></div>
+            <div><time>2:30 PM</time><h3>Ceremony</h3><p>The beginning of forever.</p></div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-icon"><img src="images/timeline-camera.png" alt=""></div>
+            <div><time>4:00 PM</time><h3>Photos</h3><p>Capture the beautiful moments.</p></div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-icon"><img src="images/timeline-cocktails.png" alt=""></div>
+            <div><time>5:30 PM</time><h3>Cocktails</h3><p>Raise a glass with us.</p></div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-icon"><img src="images/timeline-dinner.png" alt=""></div>
+            <div><time>6:30 PM</time><h3>Dinner</h3><p>A beautiful meal shared together.</p></div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-icon"><img src="images/timeline-dancing.png" alt=""></div>
+            <div><time>8:00 PM</time><h3>Dancing</h3><p>Meet us on the dance floor.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="blue-section dress-section reveal">
+      <img class="dress-floral" src="images/dresscode-floral.png" alt="">
+      <div class="section-inner dress-inner">
+        <p class="eyebrow light">Attire</p>
+        <h2 class="light-title">Dress Code</h2>
+        <p class="light-copy">Formal · Garden Elegant</p>
+        <p class="dress-note">
+          We would love to see our guests in refined neutrals,
+          soft blues and sophisticated navy tones.
+        </p>
+
+        <div class="palette" aria-label="Suggested dress colors">
+          <span class="swatch ivory" title="Ivory"></span>
+          <span class="swatch powder" title="Powder blue"></span>
+          <span class="swatch royal" title="Royal blue"></span>
+          <span class="swatch navy" title="Navy"></span>
+          <span class="swatch sage" title="Sage"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="venue-section reveal">
+      <div class="venue-photo">
+        <img src="images/venue.jpg" alt="Elegant hydrangea garden venue">
+        <div class="venue-overlay"></div>
+        <div class="venue-copy">
+          <p class="eyebrow light">The venue</p>
+          <h2>La Bellezza Garden</h2>
+          <p>456 Bloom Avenue · Tagaytay City</p>
+          <a class="gold-button" href="https://maps.google.com/" target="_blank" rel="noopener">View Location</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="paper-section gifts-section reveal">
+      <div class="section-inner gifts-inner">
+        <div class="gift-copy">
+          <p class="eyebrow">With gratitude</p>
+          <h2>Gifts</h2>
+          <img class="divider compact-divider" src="images/floral-divider.jpg" alt="">
+          <p>
+            Your presence is the greatest gift of all. If you wish to honor us
+            with something more, a contribution toward our future together
+            would be warmly appreciated.
+          </p>
+        </div>
+        <img class="gift-art" src="images/gift.png" alt="Wedding gift">
+      </div>
+    </section>
+
+    <section class="closing-section reveal">
+      <div class="closing-inner">
+        <img class="closing-arch" src="images/closing-floral-arch.png" alt="">
+        <div class="closing-copy">
+          <p class="eyebrow">With love</p>
+          <h2 class="script-title">Alexander <span>&</span> Beatrice</h2>
+          <p>We cannot wait to celebrate with you.</p>
+          <p class="closing-date">21 · 06 · 2027</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="script.js"></script>
+</body>
+</html>
