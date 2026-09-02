@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#082b63" />
+  <title>Alexander & Beatrice | Wedding Invitation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="cover" class="cover">
+    <div class="stars"></div>
+    <div class="hydrangea cluster cluster-a"></div>
+    <div class="hydrangea cluster cluster-b"></div>
+    <p class="eyebrow light">YOU ARE INVITED</p>
+    <button id="openInvite" class="seal" aria-label="Open invitation">
+      <span>A</span><i></i><span>B</span>
+    </button>
+    <p class="tap">Tap to open</p>
+    <span class="chevron">⌄</span>
+  </div>
+
+  <main id="invitation" class="invite hidden">
+    <section class="section hero paper">
+      <div class="floral floral-top-right"></div>
+      <div class="floral floral-bottom-left"></div>
+      <p class="eyebrow">TOGETHER WITH THEIR FAMILIES</p>
+      <h1><span>ALEXANDER</span><em>Reyes</em><b>&</b><span>BEATRICE</span><em>Lorenzo</em></h1>
+      <p class="invite-copy">joyfully invite you to celebrate their wedding</p>
+      <div class="date-row"><small>MONDAY</small><strong>21</strong><small>JUNE<br>2027</small></div>
+      <p class="closing-copy">A day of love, laughter and happily ever after.</p>
+    </section>
+
+    <section class="section story paper">
+      <h2>Our Story</h2>
+      <p>Two hearts, one love, a beautiful journey, a lifetime to go.</p>
+      <div id="countdown" class="countdown">
+        <div><strong id="days">00</strong><span>Days</span></div>
+        <div><strong id="hours">00</strong><span>Hours</span></div>
+        <div><strong id="minutes">00</strong><span>Minutes</span></div>
+        <div><strong id="seconds">00</strong><span>Seconds</span></div>
+      </div>
+      <div class="couple-art" aria-hidden="true">
+        <div class="person groom">🤵🏻</div><div class="heart">♥</div><div class="person bride">👰🏻‍♀️</div>
+      </div>
+    </section>
+
+    <section class="section details paper">
+      <h2>Ceremony & Reception</h2>
+      <div class="detail-grid">
+        <article>
+          <div class="icon">⛪</div>
+          <h3>Ceremony</h3>
+          <strong>2:30 PM</strong>
+          <p>St. Benedict Church<br>123 Faith Street<br>Manila, Philippines</p>
+        </article>
+        <article>
+          <div class="icon">🏛️</div>
+          <h3>Reception</h3>
+          <strong>5:30 PM</strong>
+          <p>La Bellezza Garden<br>456 Bloom Avenue<br>Tagaytay City</p>
+        </article>
+      </div>
+      <div class="button-row">
+        <a class="btn" href="https://maps.google.com" target="_blank" rel="noopener">Open in Maps</a>
+        <a class="btn" id="calendarLink" href="#">Add to Calendar</a>
+      </div>
+    </section>
+
+    <section class="section timeline paper">
+      <h2>Event Timeline</h2>
+      <div class="timeline-row">
+        <div><span>💍</span><strong>2:30 PM</strong><small>Ceremony</small></div>
+        <div><span>📷</span><strong>4:00 PM</strong><small>Photos</small></div>
+        <div><span>🥂</span><strong>5:30 PM</strong><small>Cocktails</small></div>
+        <div><span>🍽️</span><strong>6:30 PM</strong><small>Dinner</small></div>
+        <div><span>🎵</span><strong>8:00 PM</strong><small>Dancing</small></div>
+        <div><span>✨</span><strong>10:30 PM</strong><small>Send-off</small></div>
+      </div>
+    </section>
+
+    <section class="section venue paper two-col">
+      <div>
+        <h2>Venue</h2>
+        <h3>LA BELLEZZA GARDEN</h3>
+        <p>456 Bloom Avenue, Tagaytay City, Philippines</p>
+        <p>A charming garden venue surrounded by nature, perfect for our special day.</p>
+        <a class="btn" href="https://maps.google.com" target="_blank" rel="noopener">Open in Maps</a>
+      </div>
+      <div class="venue-art">
+        <div class="moon"></div>
+        <div class="gazebo">✦</div>
+      </div>
+    </section>
+
+    <section class="section gifts paper">
+      <h2>Gifts</h2>
+      <p>Your presence is the greatest gift of all. But if you wish to honor us with a gift, a contribution to our future would be warmly appreciated.</p>
+      <button class="btn" id="giftBtn">View Gift Details</button>
+      <div id="giftDetails" class="gift-details hidden-panel">Sample only: GCash / Bank details can be placed here later.</div>
+    </section>
+
+    <footer class="footer">
+      <div class="mini-seal">A | B</div>
+      <strong>THANK YOU</strong>
+      <p>We look forward to celebrating with you!</p>
+    </footer>
+  </main>
+
+  <button id="musicToggle" class="music" aria-label="Toggle music">♫</button>
+  <div id="youtubePlayer" class="youtube-player" aria-hidden="true"></div>
+  <script src="https://www.youtube.com/iframe_api"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>
